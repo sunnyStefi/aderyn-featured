@@ -8,11 +8,10 @@ contract ResettingStateVariable {
         address stackVar2 = stackVar1;
     }
 
-    // function stackVar1IsUsedMoreTimes(uint256 _num) public {
-    //     address stackVar1 = msg.sender;
-    //     address stackVar2 = stackVar1;
-    //     address stackVar3 = stackVar1;
-    //     address stackVar4 = stackVar1;
-
-    // }
+    function stackVar1IsUsedMoreTimes(uint256 _num) public {
+        address stackVar1 = msg.sender;
+        address stackVar2 = stackVar1;
+        address stackVar3 = stackVar1;
+        address stackVar4 = stackVar1;
+    }
 }

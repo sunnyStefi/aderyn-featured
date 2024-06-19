@@ -32,8 +32,6 @@ use std::{
     str::FromStr,
 };
 
-use super::low::SingleUseStateVariableDetector;
-
 pub fn get_all_issue_detectors() -> Vec<Box<dyn IssueDetector>> {
     vec![
         Box::<DelegateCallInLoopDetector>::default(),

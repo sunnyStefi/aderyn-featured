@@ -10,7 +10,7 @@ use crate::ast::{FunctionCallKind, VariableDeclaration};
 use crate::capture;
 use crate::context::browser::{
     ExtractBinaryOperations, ExtractElementaryTypeNameExpressions, ExtractIdentifiers,
-    ExtractIfStatements, GetImmediateChildren,
+    ExtractIfStatements, ExtractVariableDeclarationStatements, GetImmediateChildren,
 };
 use crate::detect::detector::IssueDetectorNamePool;
 use crate::{
@@ -18,6 +18,7 @@ use crate::{
     detect::detector::{IssueDetector, IssueSeverity},
 };
 
+use cyfrin_foundry_compilers::artifacts::contract;
 use eyre::Result;
 
 #[derive(Default)]
@@ -27,38 +28,41 @@ pub struct SingleUseStateVariableDetector {
 
 /**
  * @author Stefania Pozzi
- * @description This detector searches if a state variable is set in a function.
- * The detector will search for ifs cointating the variable name that preceed the variable setting.
- * It the if is found, the value inside the variable is assumed to be checked before a new assignment.
- * This is not always the case, but it is a good indicator that the variable is not resetted.
- * 
+ * @description This detector searches if a state variable is used more than once inside a function.
+ * For each function, it will first consider all its variable declarations
+ * and then check if an identifier with the same name is present only once.
+ *
  * Todo: improve efficiency
 */
 impl IssueDetector for SingleUseStateVariableDetector {
     fn detect(&mut self, context: &WorkspaceContext) -> Result<bool, Box<dyn Error>> {
-        for state_variable in context.variable_declarations() {
-            let mut state_variable_present_binary_operation = false;
-            let mut state_variable_present_true_body = false;
-            for function in context.function_definitions() {
-                //1. variable must be present inside the binary operation
-                for binary_operator in ExtractBinaryOperations::from(function).extracted {
-                    for identifier in ExtractIdentifiers::from(&binary_operator).extracted {
-                        if identifier.name == state_variable.name {
-                            state_variable_present_binary_operation = true
-                        }
-                    }
-                }
-                //2. variable must  be present inside the if statement true body
-                for if_statement in ExtractIfStatements::from(function).extracted {
-                    for identifier in ExtractIdentifiers::from(&if_statement).extracted {
-                        if identifier.name == state_variable.name {
-                            state_variable_present_true_body = true
-                        }
-                    }
-                }
+        for function in context.function_definitions() {
+            for variable_declaration_statement in
+                ExtractVariableDeclarationStatements::from(function).extracted
+            {
+                let mut stack_variable_counter = 0;
+                // 1. find the declared stack variable
+                if let Some(variable_declaration) =
+                    variable_declaration_statement.declarations.get(0)
+                {
+                    if let Some(variable_declaration) = variable_declaration {
+                        let declared_var_name = &variable_declaration.name;
 
-                if state_variable_present_binary_operation && state_variable_present_true_body {
-                    capture!(self, context, function); //add state var ;
+                        // 2. find all the identifiers in the function and increment counter
+                        for identifier in ExtractIdentifiers::from(function).extracted {
+                            if identifier.name.as_str() == declared_var_name {
+                                if stack_variable_counter > 1 {
+                                    // if the stack variable is used more than once, is a valid usage
+                                    return Ok(!self.found_instances.is_empty());
+                                } else {
+                                    stack_variable_counter += 1;
+                                }
+                            }
+                        }
+                        if stack_variable_counter == 1 {
+                            capture!(self, context, variable_declaration_statement)
+                        }
+                    }
                 }
             }
         }

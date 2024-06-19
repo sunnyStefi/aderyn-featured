@@ -924,7 +924,7 @@ it is recommended that the definition be removed when custom error is unused
 
 
 
-<details><summary>671 Found Instances</summary>
+<details><summary>203 Found Instances</summary>
 
 
 - Found in src/Size.sol [Line: 83](../2024-06-size/src/Size.sol#L83)
@@ -937,36 +937,6 @@ it is recommended that the definition be removed when custom error is unused
 
 	```solidity
 	    function initialize(
-	```
-
-- Found in src/Size.sol [Line: 88](../2024-06-size/src/Size.sol#L88)
-
-	```solidity
-	        address owner,
-	```
-
-- Found in src/Size.sol [Line: 89](../2024-06-size/src/Size.sol#L89)
-
-	```solidity
-	        InitializeFeeConfigParams calldata f,
-	```
-
-- Found in src/Size.sol [Line: 90](../2024-06-size/src/Size.sol#L90)
-
-	```solidity
-	        InitializeRiskConfigParams calldata r,
-	```
-
-- Found in src/Size.sol [Line: 91](../2024-06-size/src/Size.sol#L91)
-
-	```solidity
-	        InitializeOracleParams calldata o,
-	```
-
-- Found in src/Size.sol [Line: 92](../2024-06-size/src/Size.sol#L92)
-
-	```solidity
-	        InitializeDataParams calldata d
 	```
 
 - Found in src/Size.sol [Line: 107](../2024-06-size/src/Size.sol#L107)
@@ -1035,22 +1005,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function buyCreditMarket(BuyCreditMarketParams calldata params) external payable override(ISize) whenNotPaused {
 	```
 
-- Found in src/Size.sol [Line: 180](../2024-06-size/src/Size.sol#L180)
-
-	```solidity
-	        uint256 amount = state.executeBuyCreditMarket(params);
-	```
-
 - Found in src/Size.sol [Line: 188](../2024-06-size/src/Size.sol#L188)
 
 	```solidity
 	    function sellCreditMarket(SellCreditMarketParams memory params) external payable override(ISize) whenNotPaused {
-	```
-
-- Found in src/Size.sol [Line: 190](../2024-06-size/src/Size.sol#L190)
-
-	```solidity
-	        uint256 amount = state.executeSellCreditMarket(params);
 	```
 
 - Found in src/Size.sol [Line: 198](../2024-06-size/src/Size.sol#L198)
@@ -1071,12 +1029,6 @@ it is recommended that the definition be removed when custom error is unused
 	    function liquidate(LiquidateParams calldata params)
 	```
 
-- Found in src/Size.sol [Line: 215](../2024-06-size/src/Size.sol#L215)
-
-	```solidity
-	        returns (uint256 liquidatorProfitCollateralToken)
-	```
-
 - Found in src/Size.sol [Line: 223](../2024-06-size/src/Size.sol#L223)
 
 	```solidity
@@ -1089,18 +1041,6 @@ it is recommended that the definition be removed when custom error is unused
 	    function liquidateWithReplacement(LiquidateWithReplacementParams calldata params)
 	```
 
-- Found in src/Size.sol [Line: 235](../2024-06-size/src/Size.sol#L235)
-
-	```solidity
-	        returns (uint256 liquidatorProfitCollateralToken, uint256 liquidatorProfitBorrowToken)
-	```
-
-- Found in src/Size.sol [Line: 238](../2024-06-size/src/Size.sol#L238)
-
-	```solidity
-	        uint256 amount;
-	```
-
 - Found in src/Size.sol [Line: 247](../2024-06-size/src/Size.sol#L247)
 
 	```solidity
@@ -1111,36 +1051,6 @@ it is recommended that the definition be removed when custom error is unused
 
 	```solidity
 	    function setUserConfiguration(SetUserConfigurationParams calldata params)
-	```
-
-- Found in src/SizeStorage.sol [Line: 18](../2024-06-size/src/SizeStorage.sol#L18)
-
-	```solidity
-	    LoanOffer loanOffer;
-	```
-
-- Found in src/SizeStorage.sol [Line: 22](../2024-06-size/src/SizeStorage.sol#L22)
-
-	```solidity
-	    uint256 openingLimitBorrowCR;
-	```
-
-- Found in src/SizeStorage.sol [Line: 52](../2024-06-size/src/SizeStorage.sol#L52)
-
-	```solidity
-	    uint256 minTenor;
-	```
-
-- Found in src/SizeStorage.sol [Line: 54](../2024-06-size/src/SizeStorage.sol#L54)
-
-	```solidity
-	    uint256 maxTenor;
-	```
-
-- Found in src/SizeStorage.sol [Line: 114](../2024-06-size/src/SizeStorage.sol#L114)
-
-	```solidity
-	    State internal state;
 	```
 
 - Found in src/SizeView.sol [Line: 48](../2024-06-size/src/SizeView.sol#L48)
@@ -1251,28 +1161,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function getDebtPositionAssignedCollateral(uint256 debtPositionId) external view returns (uint256) {
 	```
 
-- Found in src/SizeView.sol [Line: 174](../2024-06-size/src/SizeView.sol#L174)
-
-	```solidity
-	        DebtPosition memory debtPosition = state.getDebtPosition(debtPositionId);
-	```
-
 - Found in src/SizeView.sol [Line: 179](../2024-06-size/src/SizeView.sol#L179)
 
 	```solidity
 	    function getSwapFee(uint256 cash, uint256 tenor) public view returns (uint256) {
-	```
-
-- Found in src/SizeViewData.sol [Line: 13](../2024-06-size/src/SizeViewData.sol#L13)
-
-	```solidity
-	    User user;
-	```
-
-- Found in src/SizeViewData.sol [Line: 15](../2024-06-size/src/SizeViewData.sol#L15)
-
-	```solidity
-	    address account;
 	```
 
 - Found in src/interfaces/IMulticall.sol [Line: 13](../2024-06-size/src/interfaces/IMulticall.sol#L13)
@@ -1335,12 +1227,6 @@ it is recommended that the definition be removed when custom error is unused
 	    function liquidate(LiquidateParams calldata params)
 	```
 
-- Found in src/interfaces/ISize.sol [Line: 129](../2024-06-size/src/interfaces/ISize.sol#L129)
-
-	```solidity
-	        returns (uint256 liquidatorProfitCollateralToken);
-	```
-
 - Found in src/interfaces/ISize.sol [Line: 136](../2024-06-size/src/interfaces/ISize.sol#L136)
 
 	```solidity
@@ -1351,12 +1237,6 @@ it is recommended that the definition be removed when custom error is unused
 
 	```solidity
 	    function liquidateWithReplacement(LiquidateWithReplacementParams calldata params)
-	```
-
-- Found in src/interfaces/ISize.sol [Line: 153](../2024-06-size/src/interfaces/ISize.sol#L153)
-
-	```solidity
-	        returns (uint256 liquidatorProfitCollateralToken, uint256 liquidatorProfitBorrowToken);
 	```
 
 - Found in src/interfaces/ISize.sol [Line: 162](../2024-06-size/src/interfaces/ISize.sol#L162)
@@ -1387,6 +1267,12 @@ it is recommended that the definition be removed when custom error is unused
 
 	```solidity
 	    function pause() external;
+	```
+
+- Found in src/interfaces/ISizeAdmin.sol [Line: 31](../2024-06-size/src/interfaces/ISizeAdmin.sol#L31)
+
+	```solidity
+	    function unpause() external;
 	```
 
 - Found in src/interfaces/ISizeView.sol [Line: 20](../2024-06-size/src/interfaces/ISizeView.sol#L20)
@@ -1473,6 +1359,12 @@ it is recommended that the definition be removed when custom error is unused
 	    function getLoanStatus(uint256 positionId) external view returns (LoanStatus);
 	```
 
+- Found in src/interfaces/ISizeView.sol [Line: 85](../2024-06-size/src/interfaces/ISizeView.sol#L85)
+
+	```solidity
+	    function getPositionsCount() external view returns (uint256, uint256);
+	```
+
 - Found in src/interfaces/ISizeView.sol [Line: 91](../2024-06-size/src/interfaces/ISizeView.sol#L91)
 
 	```solidity
@@ -1521,46 +1413,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function repayDebt(State storage state, uint256 debtPositionId, uint256 repayAmount) public {
 	```
 
-- Found in src/libraries/AccountingLibrary.sol [Line: 43](../2024-06-size/src/libraries/AccountingLibrary.sol#L43)
-
-	```solidity
-	        DebtPosition storage debtPosition = state.getDebtPosition(debtPositionId);
-	```
-
 - Found in src/libraries/AccountingLibrary.sol [Line: 62](../2024-06-size/src/libraries/AccountingLibrary.sol#L62)
 
 	```solidity
 	    function createDebtAndCreditPositions(
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 63](../2024-06-size/src/libraries/AccountingLibrary.sol#L63)
-
-	```solidity
-	        State storage state,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 68](../2024-06-size/src/libraries/AccountingLibrary.sol#L68)
-
-	```solidity
-	    ) external returns (CreditPosition memory creditPosition) {
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 69](../2024-06-size/src/libraries/AccountingLibrary.sol#L69)
-
-	```solidity
-	        DebtPosition memory debtPosition =
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 72](../2024-06-size/src/libraries/AccountingLibrary.sol#L72)
-
-	```solidity
-	        uint256 debtPositionId = state.data.nextDebtPositionId++;
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 84](../2024-06-size/src/libraries/AccountingLibrary.sol#L84)
-
-	```solidity
-	        uint256 creditPositionId = state.data.nextCreditPositionId++;
 	```
 
 - Found in src/libraries/AccountingLibrary.sol [Line: 103](../2024-06-size/src/libraries/AccountingLibrary.sol#L103)
@@ -1569,40 +1425,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function createCreditPosition(State storage state, uint256 exitCreditPositionId, address lender, uint256 credit)
 	```
 
-- Found in src/libraries/AccountingLibrary.sol [Line: 106](../2024-06-size/src/libraries/AccountingLibrary.sol#L106)
-
-	```solidity
-	        CreditPosition storage exitCreditPosition = state.getCreditPosition(exitCreditPositionId);
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 114](../2024-06-size/src/libraries/AccountingLibrary.sol#L114)
-
-	```solidity
-	            uint256 debtPositionId = exitCreditPosition.debtPositionId;
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 118](../2024-06-size/src/libraries/AccountingLibrary.sol#L118)
-
-	```solidity
-	            CreditPosition memory creditPosition =
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 121](../2024-06-size/src/libraries/AccountingLibrary.sol#L121)
-
-	```solidity
-	            uint256 creditPositionId = state.data.nextCreditPositionId++;
-	```
-
 - Found in src/libraries/AccountingLibrary.sol [Line: 137](../2024-06-size/src/libraries/AccountingLibrary.sol#L137)
 
 	```solidity
 	    function reduceCredit(State storage state, uint256 creditPositionId, uint256 amount) public {
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 138](../2024-06-size/src/libraries/AccountingLibrary.sol#L138)
-
-	```solidity
-	        CreditPosition storage creditPosition = state.getCreditPosition(creditPositionId);
 	```
 
 - Found in src/libraries/AccountingLibrary.sol [Line: 153](../2024-06-size/src/libraries/AccountingLibrary.sol#L153)
@@ -1629,106 +1455,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function getCashAmountOut(
 	```
 
-- Found in src/libraries/AccountingLibrary.sol [Line: 186](../2024-06-size/src/libraries/AccountingLibrary.sol#L186)
-
-	```solidity
-	        State storage state,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 187](../2024-06-size/src/libraries/AccountingLibrary.sol#L187)
-
-	```solidity
-	        uint256 creditAmountIn,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 188](../2024-06-size/src/libraries/AccountingLibrary.sol#L188)
-
-	```solidity
-	        uint256 maxCredit,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 189](../2024-06-size/src/libraries/AccountingLibrary.sol#L189)
-
-	```solidity
-	        uint256 ratePerTenor,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 190](../2024-06-size/src/libraries/AccountingLibrary.sol#L190)
-
-	```solidity
-	        uint256 tenor
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 191](../2024-06-size/src/libraries/AccountingLibrary.sol#L191)
-
-	```solidity
-	    ) internal view returns (uint256 cashAmountOut, uint256 fees) {
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 192](../2024-06-size/src/libraries/AccountingLibrary.sol#L192)
-
-	```solidity
-	        uint256 maxCashAmountOut = Math.mulDivDown(creditAmountIn, PERCENT, PERCENT + ratePerTenor);
-	```
-
 - Found in src/libraries/AccountingLibrary.sol [Line: 228](../2024-06-size/src/libraries/AccountingLibrary.sol#L228)
 
 	```solidity
 	    function getCreditAmountIn(
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 229](../2024-06-size/src/libraries/AccountingLibrary.sol#L229)
-
-	```solidity
-	        State storage state,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 230](../2024-06-size/src/libraries/AccountingLibrary.sol#L230)
-
-	```solidity
-	        uint256 cashAmountOut,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 231](../2024-06-size/src/libraries/AccountingLibrary.sol#L231)
-
-	```solidity
-	        uint256 maxCashAmountOut,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 232](../2024-06-size/src/libraries/AccountingLibrary.sol#L232)
-
-	```solidity
-	        uint256 maxCredit,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 233](../2024-06-size/src/libraries/AccountingLibrary.sol#L233)
-
-	```solidity
-	        uint256 ratePerTenor,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 234](../2024-06-size/src/libraries/AccountingLibrary.sol#L234)
-
-	```solidity
-	        uint256 tenor
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 235](../2024-06-size/src/libraries/AccountingLibrary.sol#L235)
-
-	```solidity
-	    ) internal view returns (uint256 creditAmountIn, uint256 fees) {
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 236](../2024-06-size/src/libraries/AccountingLibrary.sol#L236)
-
-	```solidity
-	        uint256 swapFeePercent = getSwapFeePercent(state, tenor);
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 238](../2024-06-size/src/libraries/AccountingLibrary.sol#L238)
-
-	```solidity
-	        uint256 maxCashAmountOutFragmentation = 0;
 	```
 
 - Found in src/libraries/AccountingLibrary.sol [Line: 274](../2024-06-size/src/libraries/AccountingLibrary.sol#L274)
@@ -1737,148 +1467,16 @@ it is recommended that the definition be removed when custom error is unused
 	    function getCreditAmountOut(
 	```
 
-- Found in src/libraries/AccountingLibrary.sol [Line: 275](../2024-06-size/src/libraries/AccountingLibrary.sol#L275)
-
-	```solidity
-	        State storage state,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 276](../2024-06-size/src/libraries/AccountingLibrary.sol#L276)
-
-	```solidity
-	        uint256 cashAmountIn,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 277](../2024-06-size/src/libraries/AccountingLibrary.sol#L277)
-
-	```solidity
-	        uint256 maxCashAmountIn,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 278](../2024-06-size/src/libraries/AccountingLibrary.sol#L278)
-
-	```solidity
-	        uint256 maxCredit,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 279](../2024-06-size/src/libraries/AccountingLibrary.sol#L279)
-
-	```solidity
-	        uint256 ratePerTenor,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 280](../2024-06-size/src/libraries/AccountingLibrary.sol#L280)
-
-	```solidity
-	        uint256 tenor
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 281](../2024-06-size/src/libraries/AccountingLibrary.sol#L281)
-
-	```solidity
-	    ) internal view returns (uint256 creditAmountOut, uint256 fees) {
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 294](../2024-06-size/src/libraries/AccountingLibrary.sol#L294)
-
-	```solidity
-	            uint256 netCashAmountIn = cashAmountIn - state.feeConfig.fragmentationFee;
-	```
-
 - Found in src/libraries/AccountingLibrary.sol [Line: 311](../2024-06-size/src/libraries/AccountingLibrary.sol#L311)
 
 	```solidity
 	    function getCashAmountIn(
 	```
 
-- Found in src/libraries/AccountingLibrary.sol [Line: 312](../2024-06-size/src/libraries/AccountingLibrary.sol#L312)
-
-	```solidity
-	        State storage state,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 313](../2024-06-size/src/libraries/AccountingLibrary.sol#L313)
-
-	```solidity
-	        uint256 creditAmountOut,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 314](../2024-06-size/src/libraries/AccountingLibrary.sol#L314)
-
-	```solidity
-	        uint256 maxCredit,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 315](../2024-06-size/src/libraries/AccountingLibrary.sol#L315)
-
-	```solidity
-	        uint256 ratePerTenor,
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 316](../2024-06-size/src/libraries/AccountingLibrary.sol#L316)
-
-	```solidity
-	        uint256 tenor
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 317](../2024-06-size/src/libraries/AccountingLibrary.sol#L317)
-
-	```solidity
-	    ) internal view returns (uint256 cashAmountIn, uint256 fees) {
-	```
-
-- Found in src/libraries/AccountingLibrary.sol [Line: 326](../2024-06-size/src/libraries/AccountingLibrary.sol#L326)
-
-	```solidity
-	            uint256 netCashAmountIn = Math.mulDivUp(creditAmountOut, PERCENT, PERCENT + ratePerTenor);
-	```
-
 - Found in src/libraries/CapsLibrary.sol [Line: 19](../2024-06-size/src/libraries/CapsLibrary.sol#L19)
 
 	```solidity
 	    function validateBorrowATokenIncreaseLteDebtTokenDecrease(
-	```
-
-- Found in src/libraries/CapsLibrary.sol [Line: 20](../2024-06-size/src/libraries/CapsLibrary.sol#L20)
-
-	```solidity
-	        State storage state,
-	```
-
-- Found in src/libraries/CapsLibrary.sol [Line: 21](../2024-06-size/src/libraries/CapsLibrary.sol#L21)
-
-	```solidity
-	        uint256 borrowATokenSupplyBefore,
-	```
-
-- Found in src/libraries/CapsLibrary.sol [Line: 22](../2024-06-size/src/libraries/CapsLibrary.sol#L22)
-
-	```solidity
-	        uint256 debtTokenSupplyBefore,
-	```
-
-- Found in src/libraries/CapsLibrary.sol [Line: 23](../2024-06-size/src/libraries/CapsLibrary.sol#L23)
-
-	```solidity
-	        uint256 borrowATokenSupplyAfter,
-	```
-
-- Found in src/libraries/CapsLibrary.sol [Line: 24](../2024-06-size/src/libraries/CapsLibrary.sol#L24)
-
-	```solidity
-	        uint256 debtTokenSupplyAfter
-	```
-
-- Found in src/libraries/CapsLibrary.sol [Line: 28](../2024-06-size/src/libraries/CapsLibrary.sol#L28)
-
-	```solidity
-	            uint256 borrowATokenSupplyIncrease = borrowATokenSupplyAfter > borrowATokenSupplyBefore
-	```
-
-- Found in src/libraries/CapsLibrary.sol [Line: 31](../2024-06-size/src/libraries/CapsLibrary.sol#L31)
-
-	```solidity
-	            uint256 debtATokenSupplyDecrease =
 	```
 
 - Found in src/libraries/CapsLibrary.sol [Line: 52](../2024-06-size/src/libraries/CapsLibrary.sol#L52)
@@ -1891,12 +1489,6 @@ it is recommended that the definition be removed when custom error is unused
 
 	```solidity
 	    function validateVariablePoolHasEnoughLiquidity(State storage state, uint256 amount) public view {
-	```
-
-- Found in src/libraries/CapsLibrary.sol [Line: 68](../2024-06-size/src/libraries/CapsLibrary.sol#L68)
-
-	```solidity
-	        uint256 liquidity = state.data.underlyingBorrowToken.balanceOf(address(state.data.variablePool));
 	```
 
 - Found in src/libraries/DepositTokenLibrary.sol [Line: 23](../2024-06-size/src/libraries/DepositTokenLibrary.sol#L23)
@@ -1921,162 +1513,6 @@ it is recommended that the definition be removed when custom error is unused
 
 	```solidity
 	    function withdrawUnderlyingTokenFromVariablePool(State storage state, address from, address to, uint256 amount)
-	```
-
-- Found in src/libraries/Events.sol [Line: 19](../2024-06-size/src/libraries/Events.sol#L19)
-
-	```solidity
-	        InitializeFeeConfigParams f, InitializeRiskConfigParams r, InitializeOracleParams o, InitializeDataParams d
-	```
-
-- Found in src/libraries/Events.sol [Line: 21](../2024-06-size/src/libraries/Events.sol#L21)
-
-	```solidity
-	    event Deposit(address indexed token, address indexed to, uint256 amount);
-	```
-
-- Found in src/libraries/Events.sol [Line: 22](../2024-06-size/src/libraries/Events.sol#L22)
-
-	```solidity
-	    event Withdraw(address indexed token, address indexed to, uint256 amount);
-	```
-
-- Found in src/libraries/Events.sol [Line: 23](../2024-06-size/src/libraries/Events.sol#L23)
-
-	```solidity
-	    event UpdateConfig(string indexed key, uint256 value);
-	```
-
-- Found in src/libraries/Events.sol [Line: 27](../2024-06-size/src/libraries/Events.sol#L27)
-
-	```solidity
-	        uint256 indexed creditPositionId,
-	```
-
-- Found in src/libraries/Events.sol [Line: 28](../2024-06-size/src/libraries/Events.sol#L28)
-
-	```solidity
-	        uint256 indexed tenor,
-	```
-
-- Found in src/libraries/Events.sol [Line: 29](../2024-06-size/src/libraries/Events.sol#L29)
-
-	```solidity
-	        uint256 amount,
-	```
-
-- Found in src/libraries/Events.sol [Line: 40](../2024-06-size/src/libraries/Events.sol#L40)
-
-	```solidity
-	        uint256 indexed creditPositionId,
-	```
-
-- Found in src/libraries/Events.sol [Line: 41](../2024-06-size/src/libraries/Events.sol#L41)
-
-	```solidity
-	        uint256 indexed tenor,
-	```
-
-- Found in src/libraries/Events.sol [Line: 42](../2024-06-size/src/libraries/Events.sol#L42)
-
-	```solidity
-	        uint256 amount,
-	```
-
-- Found in src/libraries/Events.sol [Line: 51](../2024-06-size/src/libraries/Events.sol#L51)
-
-	```solidity
-	    event Repay(uint256 indexed debtPositionId);
-	```
-
-- Found in src/libraries/Events.sol [Line: 52](../2024-06-size/src/libraries/Events.sol#L52)
-
-	```solidity
-	    event Claim(uint256 indexed creditPositionId, uint256 indexed debtPositionId);
-	```
-
-- Found in src/libraries/Events.sol [Line: 54](../2024-06-size/src/libraries/Events.sol#L54)
-
-	```solidity
-	        uint256 indexed debtPositionId, uint256 minimumCollateralProfit, uint256 collateralRatio, LoanStatus loanStatus
-	```
-
-- Found in src/libraries/Events.sol [Line: 56](../2024-06-size/src/libraries/Events.sol#L56)
-
-	```solidity
-	    event SelfLiquidate(uint256 indexed creditPositionId);
-	```
-
-- Found in src/libraries/Events.sol [Line: 58](../2024-06-size/src/libraries/Events.sol#L58)
-
-	```solidity
-	        uint256 indexed debtPositionId, address indexed borrower, uint256 minimumCollateralProfit
-	```
-
-- Found in src/libraries/Events.sol [Line: 61](../2024-06-size/src/libraries/Events.sol#L61)
-
-	```solidity
-	        uint256 indexed creditPositionWithDebtToRepayId, uint256 indexed creditPositionToCompensateId, uint256 amount
-	```
-
-- Found in src/libraries/Events.sol [Line: 64](../2024-06-size/src/libraries/Events.sol#L64)
-
-	```solidity
-	        uint256 indexed openingLimitBorrowCR,
-	```
-
-- Found in src/libraries/Events.sol [Line: 73](../2024-06-size/src/libraries/Events.sol#L73)
-
-	```solidity
-	        uint256 indexed debtPositionId,
-	```
-
-- Found in src/libraries/Events.sol [Line: 80](../2024-06-size/src/libraries/Events.sol#L80)
-
-	```solidity
-	        uint256 indexed creditPositionId,
-	```
-
-- Found in src/libraries/Events.sol [Line: 82](../2024-06-size/src/libraries/Events.sol#L82)
-
-	```solidity
-	        uint256 indexed debtPositionId,
-	```
-
-- Found in src/libraries/Events.sol [Line: 84](../2024-06-size/src/libraries/Events.sol#L84)
-
-	```solidity
-	        uint256 credit
-	```
-
-- Found in src/libraries/Events.sol [Line: 90](../2024-06-size/src/libraries/Events.sol#L90)
-
-	```solidity
-	        uint256 indexed debtPositionId, address indexed borrower, uint256 futureValue, uint256 liquidityIndexAtRepayment
-	```
-
-- Found in src/libraries/Events.sol [Line: 92](../2024-06-size/src/libraries/Events.sol#L92)
-
-	```solidity
-	    event UpdateCreditPosition(uint256 indexed creditPositionId, address indexed lender, uint256 credit, bool forSale);
-	```
-
-- Found in src/libraries/LoanLibrary.sol [Line: 12](../2024-06-size/src/libraries/LoanLibrary.sol#L12)
-
-	```solidity
-	uint256 constant RESERVED_ID = type(uint256).max;
-	```
-
-- Found in src/libraries/LoanLibrary.sol [Line: 39](../2024-06-size/src/libraries/LoanLibrary.sol#L39)
-
-	```solidity
-	    uint256 credit;
-	```
-
-- Found in src/libraries/LoanLibrary.sol [Line: 41](../2024-06-size/src/libraries/LoanLibrary.sol#L41)
-
-	```solidity
-	    uint256 debtPositionId;
 	```
 
 - Found in src/libraries/LoanLibrary.sol [Line: 63](../2024-06-size/src/libraries/LoanLibrary.sol#L63)
@@ -2109,22 +1545,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function getDebtPositionByCreditPositionId(State storage state, uint256 creditPositionId)
 	```
 
-- Found in src/libraries/LoanLibrary.sol [Line: 114](../2024-06-size/src/libraries/LoanLibrary.sol#L114)
-
-	```solidity
-	        CreditPosition memory creditPosition = getCreditPosition(state, creditPositionId);
-	```
-
 - Found in src/libraries/LoanLibrary.sol [Line: 122](../2024-06-size/src/libraries/LoanLibrary.sol#L122)
 
 	```solidity
 	    function getLoanStatus(State storage state, uint256 positionId) public view returns (LoanStatus) {
-	```
-
-- Found in src/libraries/LoanLibrary.sol [Line: 124](../2024-06-size/src/libraries/LoanLibrary.sol#L124)
-
-	```solidity
-	        DebtPosition memory debtPosition = state.data.debtPositions[positionId];
 	```
 
 - Found in src/libraries/LoanLibrary.sol [Line: 148](../2024-06-size/src/libraries/LoanLibrary.sol#L148)
@@ -2133,40 +1557,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function getDebtPositionAssignedCollateral(State storage state, DebtPosition memory debtPosition)
 	```
 
-- Found in src/libraries/LoanLibrary.sol [Line: 153](../2024-06-size/src/libraries/LoanLibrary.sol#L153)
-
-	```solidity
-	        uint256 debt = state.data.debtToken.balanceOf(debtPosition.borrower);
-	```
-
 - Found in src/libraries/LoanLibrary.sol [Line: 170](../2024-06-size/src/libraries/LoanLibrary.sol#L170)
 
 	```solidity
 	    function getCreditPositionProRataAssignedCollateral(State storage state, CreditPosition memory creditPosition)
-	```
-
-- Found in src/libraries/LoanLibrary.sol [Line: 175](../2024-06-size/src/libraries/LoanLibrary.sol#L175)
-
-	```solidity
-	        DebtPosition storage debtPosition = getDebtPosition(state, creditPosition.debtPositionId);
-	```
-
-- Found in src/libraries/LoanLibrary.sol [Line: 179](../2024-06-size/src/libraries/LoanLibrary.sol#L179)
-
-	```solidity
-	        uint256 debtPositionFutureValue = debtPosition.futureValue;
-	```
-
-- Found in src/libraries/Math.sol [Line: 7](../2024-06-size/src/libraries/Math.sol#L7)
-
-	```solidity
-	uint256 constant PERCENT = 1e18;
-	```
-
-- Found in src/libraries/Math.sol [Line: 9](../2024-06-size/src/libraries/Math.sol#L9)
-
-	```solidity
-	uint256 constant YEAR = 365 days;
 	```
 
 - Found in src/libraries/Math.sol [Line: 15](../2024-06-size/src/libraries/Math.sol#L15)
@@ -2211,58 +1605,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function binarySearch(uint256[] memory array, uint256 value) internal pure returns (uint256 low, uint256 high) {
 	```
 
-- Found in src/libraries/Math.sol [Line: 58](../2024-06-size/src/libraries/Math.sol#L58)
-
-	```solidity
-	            uint256 mid = (low + high) / 2;
-	```
-
 - Found in src/libraries/Multicall.sol [Line: 26](../2024-06-size/src/libraries/Multicall.sol#L26)
 
 	```solidity
 	    function multicall(State storage state, bytes[] calldata data) internal returns (bytes[] memory results) {
-	```
-
-- Found in src/libraries/Multicall.sol [Line: 29](../2024-06-size/src/libraries/Multicall.sol#L29)
-
-	```solidity
-	        uint256 borrowATokenSupplyBefore = state.data.borrowAToken.balanceOf(address(this));
-	```
-
-- Found in src/libraries/Multicall.sol [Line: 30](../2024-06-size/src/libraries/Multicall.sol#L30)
-
-	```solidity
-	        uint256 debtTokenSupplyBefore = state.data.debtToken.totalSupply();
-	```
-
-- Found in src/libraries/Multicall.sol [Line: 33](../2024-06-size/src/libraries/Multicall.sol#L33)
-
-	```solidity
-	        for (uint256 i = 0; i < data.length; i++) {
-	```
-
-- Found in src/libraries/Multicall.sol [Line: 37](../2024-06-size/src/libraries/Multicall.sol#L37)
-
-	```solidity
-	        uint256 borrowATokenSupplyAfter = state.data.borrowAToken.balanceOf(address(this));
-	```
-
-- Found in src/libraries/Multicall.sol [Line: 38](../2024-06-size/src/libraries/Multicall.sol#L38)
-
-	```solidity
-	        uint256 debtTokenSupplyAfter = state.data.debtToken.totalSupply();
-	```
-
-- Found in src/libraries/OfferLibrary.sol [Line: 14](../2024-06-size/src/libraries/OfferLibrary.sol#L14)
-
-	```solidity
-	    YieldCurve curveRelativeTime;
-	```
-
-- Found in src/libraries/OfferLibrary.sol [Line: 20](../2024-06-size/src/libraries/OfferLibrary.sol#L20)
-
-	```solidity
-	    YieldCurve curveRelativeTime;
 	```
 
 - Found in src/libraries/OfferLibrary.sol [Line: 32](../2024-06-size/src/libraries/OfferLibrary.sol#L32)
@@ -2289,12 +1635,6 @@ it is recommended that the definition be removed when custom error is unused
 	    function getRatePerTenor(LoanOffer memory self, VariablePoolBorrowRateParams memory params, uint256 tenor)
 	```
 
-- Found in src/libraries/OfferLibrary.sol [Line: 67](../2024-06-size/src/libraries/OfferLibrary.sol#L67)
-
-	```solidity
-	        uint256 apr = getAPRByTenor(self, params, tenor);
-	```
-
 - Found in src/libraries/OfferLibrary.sol [Line: 76](../2024-06-size/src/libraries/OfferLibrary.sol#L76)
 
 	```solidity
@@ -2305,12 +1645,6 @@ it is recommended that the definition be removed when custom error is unused
 
 	```solidity
 	    function getRatePerTenor(BorrowOffer memory self, VariablePoolBorrowRateParams memory params, uint256 tenor)
-	```
-
-- Found in src/libraries/OfferLibrary.sol [Line: 95](../2024-06-size/src/libraries/OfferLibrary.sol#L95)
-
-	```solidity
-	        uint256 apr = getAPRByTenor(self, params, tenor);
 	```
 
 - Found in src/libraries/RiskLibrary.sol [Line: 21](../2024-06-size/src/libraries/RiskLibrary.sol#L21)
@@ -2337,34 +1671,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function collateralRatio(State storage state, address account) public view returns (uint256) {
 	```
 
-- Found in src/libraries/RiskLibrary.sol [Line: 55](../2024-06-size/src/libraries/RiskLibrary.sol#L55)
-
-	```solidity
-	        uint256 debt = state.data.debtToken.balanceOf(account);
-	```
-
-- Found in src/libraries/RiskLibrary.sol [Line: 57](../2024-06-size/src/libraries/RiskLibrary.sol#L57)
-
-	```solidity
-	        uint256 price = state.oracle.priceFeed.getPrice();
-	```
-
 - Found in src/libraries/RiskLibrary.sol [Line: 71](../2024-06-size/src/libraries/RiskLibrary.sol#L71)
 
 	```solidity
 	    function isCreditPositionSelfLiquidatable(State storage state, uint256 creditPositionId)
-	```
-
-- Found in src/libraries/RiskLibrary.sol [Line: 76](../2024-06-size/src/libraries/RiskLibrary.sol#L76)
-
-	```solidity
-	        CreditPosition storage creditPosition = state.data.creditPositions[creditPositionId];
-	```
-
-- Found in src/libraries/RiskLibrary.sol [Line: 77](../2024-06-size/src/libraries/RiskLibrary.sol#L77)
-
-	```solidity
-	        DebtPosition storage debtPosition = state.data.debtPositions[creditPosition.debtPositionId];
 	```
 
 - Found in src/libraries/RiskLibrary.sol [Line: 89](../2024-06-size/src/libraries/RiskLibrary.sol#L89)
@@ -2377,12 +1687,6 @@ it is recommended that the definition be removed when custom error is unused
 
 	```solidity
 	    function isDebtPositionLiquidatable(State storage state, uint256 debtPositionId) public view returns (bool) {
-	```
-
-- Found in src/libraries/RiskLibrary.sol [Line: 105](../2024-06-size/src/libraries/RiskLibrary.sol#L105)
-
-	```solidity
-	        DebtPosition storage debtPosition = state.data.debtPositions[debtPositionId];
 	```
 
 - Found in src/libraries/RiskLibrary.sol [Line: 121](../2024-06-size/src/libraries/RiskLibrary.sol#L121)
@@ -2403,12 +1707,6 @@ it is recommended that the definition be removed when custom error is unused
 	    function validateUserIsNotBelowOpeningLimitBorrowCR(State storage state, address account) external view {
 	```
 
-- Found in src/libraries/RiskLibrary.sol [Line: 141](../2024-06-size/src/libraries/RiskLibrary.sol#L141)
-
-	```solidity
-	        uint256 openingLimitBorrowCR = Math.max(
-	```
-
 - Found in src/libraries/YieldCurveLibrary.sol [Line: 38](../2024-06-size/src/libraries/YieldCurveLibrary.sol#L38)
 
 	```solidity
@@ -2419,18 +1717,6 @@ it is recommended that the definition be removed when custom error is unused
 
 	```solidity
 	    function validateYieldCurve(YieldCurve memory self, uint256 minTenor, uint256 maxTenor) internal pure {
-	```
-
-- Found in src/libraries/YieldCurveLibrary.sol [Line: 62](../2024-06-size/src/libraries/YieldCurveLibrary.sol#L62)
-
-	```solidity
-	        uint256 lastTenor = type(uint256).max;
-	```
-
-- Found in src/libraries/YieldCurveLibrary.sol [Line: 63](../2024-06-size/src/libraries/YieldCurveLibrary.sol#L63)
-
-	```solidity
-	        for (uint256 i = self.tenors.length; i != 0; i--) {
 	```
 
 - Found in src/libraries/YieldCurveLibrary.sol [Line: 87](../2024-06-size/src/libraries/YieldCurveLibrary.sol#L87)
@@ -2445,58 +1731,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function getAPR(YieldCurve memory curveRelativeTime, VariablePoolBorrowRateParams memory params, uint256 tenor)
 	```
 
-- Found in src/libraries/YieldCurveLibrary.sol [Line: 120](../2024-06-size/src/libraries/YieldCurveLibrary.sol#L120)
-
-	```solidity
-	        uint256 length = curveRelativeTime.tenors.length;
-	```
-
-- Found in src/libraries/YieldCurveLibrary.sol [Line: 124](../2024-06-size/src/libraries/YieldCurveLibrary.sol#L124)
-
-	```solidity
-	            (uint256 low, uint256 high) = Math.binarySearch(curveRelativeTime.tenors, tenor);
-	```
-
-- Found in src/libraries/YieldCurveLibrary.sol [Line: 125](../2024-06-size/src/libraries/YieldCurveLibrary.sol#L125)
-
-	```solidity
-	            uint256 y0 =
-	```
-
-- Found in src/libraries/YieldCurveLibrary.sol [Line: 129](../2024-06-size/src/libraries/YieldCurveLibrary.sol#L129)
-
-	```solidity
-	                uint256 x0 = curveRelativeTime.tenors[low];
-	```
-
-- Found in src/libraries/YieldCurveLibrary.sol [Line: 130](../2024-06-size/src/libraries/YieldCurveLibrary.sol#L130)
-
-	```solidity
-	                uint256 x1 = curveRelativeTime.tenors[high];
-	```
-
-- Found in src/libraries/YieldCurveLibrary.sol [Line: 131](../2024-06-size/src/libraries/YieldCurveLibrary.sol#L131)
-
-	```solidity
-	                uint256 y1 =
-	```
-
-- Found in src/libraries/actions/BuyCreditLimit.sol [Line: 16](../2024-06-size/src/libraries/actions/BuyCreditLimit.sol#L16)
-
-	```solidity
-	    YieldCurve curveRelativeTime;
-	```
-
 - Found in src/libraries/actions/BuyCreditLimit.sol [Line: 29](../2024-06-size/src/libraries/actions/BuyCreditLimit.sol#L29)
 
 	```solidity
 	    function validateBuyCreditLimit(State storage state, BuyCreditLimitParams calldata params) external view {
-	```
-
-- Found in src/libraries/actions/BuyCreditLimit.sol [Line: 30](../2024-06-size/src/libraries/actions/BuyCreditLimit.sol#L30)
-
-	```solidity
-	        LoanOffer memory loanOffer =
 	```
 
 - Found in src/libraries/actions/BuyCreditLimit.sol [Line: 57](../2024-06-size/src/libraries/actions/BuyCreditLimit.sol#L57)
@@ -2505,58 +1743,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function executeBuyCreditLimit(State storage state, BuyCreditLimitParams calldata params) external {
 	```
 
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 22](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L22)
-
-	```solidity
-	    uint256 creditPositionId;
-	```
-
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 24](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L24)
-
-	```solidity
-	    uint256 amount;
-	```
-
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 27](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L27)
-
-	```solidity
-	    uint256 tenor;
-	```
-
 - Found in src/libraries/actions/BuyCreditMarket.sol [Line: 51](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L51)
 
 	```solidity
 	    function validateBuyCreditMarket(State storage state, BuyCreditMarketParams calldata params) external view {
-	```
-
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 53](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L53)
-
-	```solidity
-	        uint256 tenor;
-	```
-
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 65](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L65)
-
-	```solidity
-	            CreditPosition storage creditPosition = state.getCreditPosition(params.creditPositionId);
-	```
-
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 66](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L66)
-
-	```solidity
-	            DebtPosition storage debtPosition = state.getDebtPositionByCreditPositionId(params.creditPositionId);
-	```
-
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 74](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L74)
-
-	```solidity
-	            User storage user = state.data.users[creditPosition.lender];
-	```
-
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 101](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L101)
-
-	```solidity
-	        uint256 apr = borrowOffer.getAPRByTenor(
 	```
 
 - Found in src/libraries/actions/BuyCreditMarket.sol [Line: 121](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L121)
@@ -2565,64 +1755,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function executeBuyCreditMarket(State storage state, BuyCreditMarketParams memory params)
 	```
 
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 123](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L123)
-
-	```solidity
-	        returns (uint256 cashAmountIn)
-	```
-
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 130](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L130)
-
-	```solidity
-	        CreditPosition memory creditPosition;
-	```
-
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 131](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L131)
-
-	```solidity
-	        uint256 tenor;
-	```
-
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 137](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L137)
-
-	```solidity
-	            DebtPosition storage debtPosition = state.getDebtPositionByCreditPositionId(params.creditPositionId);
-	```
-
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 144](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L144)
-
-	```solidity
-	        uint256 ratePerTenor = state.data.users[borrower].borrowOffer.getRatePerTenor(
-	```
-
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 153](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L153)
-
-	```solidity
-	        uint256 creditAmountOut;
-	```
-
-- Found in src/libraries/actions/BuyCreditMarket.sol [Line: 154](../2024-06-size/src/libraries/actions/BuyCreditMarket.sol#L154)
-
-	```solidity
-	        uint256 fees;
-	```
-
-- Found in src/libraries/actions/Claim.sol [Line: 16](../2024-06-size/src/libraries/actions/Claim.sol#L16)
-
-	```solidity
-	    uint256 creditPositionId;
-	```
-
 - Found in src/libraries/actions/Claim.sol [Line: 31](../2024-06-size/src/libraries/actions/Claim.sol#L31)
 
 	```solidity
 	    function validateClaim(State storage state, ClaimParams calldata params) external view {
-	```
-
-- Found in src/libraries/actions/Claim.sol [Line: 32](../2024-06-size/src/libraries/actions/Claim.sol#L32)
-
-	```solidity
-	        CreditPosition storage creditPosition = state.getCreditPosition(params.creditPositionId);
 	```
 
 - Found in src/libraries/actions/Claim.sol [Line: 48](../2024-06-size/src/libraries/actions/Claim.sol#L48)
@@ -2631,88 +1767,16 @@ it is recommended that the definition be removed when custom error is unused
 	    function executeClaim(State storage state, ClaimParams calldata params) external {
 	```
 
-- Found in src/libraries/actions/Claim.sol [Line: 49](../2024-06-size/src/libraries/actions/Claim.sol#L49)
-
-	```solidity
-	        CreditPosition storage creditPosition = state.getCreditPosition(params.creditPositionId);
-	```
-
-- Found in src/libraries/actions/Claim.sol [Line: 50](../2024-06-size/src/libraries/actions/Claim.sol#L50)
-
-	```solidity
-	        DebtPosition storage debtPosition = state.getDebtPositionByCreditPositionId(params.creditPositionId);
-	```
-
-- Found in src/libraries/actions/Compensate.sol [Line: 24](../2024-06-size/src/libraries/actions/Compensate.sol#L24)
-
-	```solidity
-	    uint256 amount;
-	```
-
 - Found in src/libraries/actions/Compensate.sol [Line: 42](../2024-06-size/src/libraries/actions/Compensate.sol#L42)
 
 	```solidity
 	    function validateCompensate(State storage state, CompensateParams calldata params) external view {
 	```
 
-- Found in src/libraries/actions/Compensate.sol [Line: 45](../2024-06-size/src/libraries/actions/Compensate.sol#L45)
-
-	```solidity
-	        DebtPosition storage debtPositionToRepay =
-	```
-
-- Found in src/libraries/actions/Compensate.sol [Line: 48](../2024-06-size/src/libraries/actions/Compensate.sol#L48)
-
-	```solidity
-	        uint256 amountToCompensate = Math.min(params.amount, creditPositionWithDebtToRepay.credit);
-	```
-
-- Found in src/libraries/actions/Compensate.sol [Line: 57](../2024-06-size/src/libraries/actions/Compensate.sol#L57)
-
-	```solidity
-	            uint256 tenor = debtPositionToRepay.dueDate - block.timestamp;
-	```
-
-- Found in src/libraries/actions/Compensate.sol [Line: 64](../2024-06-size/src/libraries/actions/Compensate.sol#L64)
-
-	```solidity
-	            CreditPosition storage creditPositionToCompensate =
-	```
-
 - Found in src/libraries/actions/Compensate.sol [Line: 106](../2024-06-size/src/libraries/actions/Compensate.sol#L106)
 
 	```solidity
 	    function executeCompensate(State storage state, CompensateParams calldata params) external {
-	```
-
-- Found in src/libraries/actions/Compensate.sol [Line: 113](../2024-06-size/src/libraries/actions/Compensate.sol#L113)
-
-	```solidity
-	        DebtPosition storage debtPositionToRepay =
-	```
-
-- Found in src/libraries/actions/Compensate.sol [Line: 116](../2024-06-size/src/libraries/actions/Compensate.sol#L116)
-
-	```solidity
-	        uint256 amountToCompensate = Math.min(params.amount, creditPositionWithDebtToRepay.credit);
-	```
-
-- Found in src/libraries/actions/Compensate.sol [Line: 118](../2024-06-size/src/libraries/actions/Compensate.sol#L118)
-
-	```solidity
-	        CreditPosition memory creditPositionToCompensate;
-	```
-
-- Found in src/libraries/actions/Compensate.sol [Line: 136](../2024-06-size/src/libraries/actions/Compensate.sol#L136)
-
-	```solidity
-	        uint256 exiterCreditRemaining = creditPositionToCompensate.credit - amountToCompensate;
-	```
-
-- Found in src/libraries/actions/Deposit.sol [Line: 20](../2024-06-size/src/libraries/actions/Deposit.sol#L20)
-
-	```solidity
-	    uint256 amount;
 	```
 
 - Found in src/libraries/actions/Deposit.sol [Line: 36](../2024-06-size/src/libraries/actions/Deposit.sol#L36)
@@ -2725,24 +1789,6 @@ it is recommended that the definition be removed when custom error is unused
 
 	```solidity
 	    function executeDeposit(State storage state, DepositParams calldata params) public {
-	```
-
-- Found in src/libraries/actions/Deposit.sol [Line: 66](../2024-06-size/src/libraries/actions/Deposit.sol#L66)
-
-	```solidity
-	        uint256 amount = params.amount;
-	```
-
-- Found in src/libraries/actions/Initialize.sol [Line: 38](../2024-06-size/src/libraries/actions/Initialize.sol#L38)
-
-	```solidity
-	    uint256 minTenor;
-	```
-
-- Found in src/libraries/actions/Initialize.sol [Line: 39](../2024-06-size/src/libraries/actions/Initialize.sol#L39)
-
-	```solidity
-	    uint256 maxTenor;
 	```
 
 - Found in src/libraries/actions/Initialize.sol [Line: 62](../2024-06-size/src/libraries/actions/Initialize.sol#L62)
@@ -2781,36 +1827,6 @@ it is recommended that the definition be removed when custom error is unused
 	    function validateInitialize(
 	```
 
-- Found in src/libraries/actions/Initialize.sol [Line: 177](../2024-06-size/src/libraries/actions/Initialize.sol#L177)
-
-	```solidity
-	        address owner,
-	```
-
-- Found in src/libraries/actions/Initialize.sol [Line: 178](../2024-06-size/src/libraries/actions/Initialize.sol#L178)
-
-	```solidity
-	        InitializeFeeConfigParams memory f,
-	```
-
-- Found in src/libraries/actions/Initialize.sol [Line: 179](../2024-06-size/src/libraries/actions/Initialize.sol#L179)
-
-	```solidity
-	        InitializeRiskConfigParams memory r,
-	```
-
-- Found in src/libraries/actions/Initialize.sol [Line: 180](../2024-06-size/src/libraries/actions/Initialize.sol#L180)
-
-	```solidity
-	        InitializeOracleParams memory o,
-	```
-
-- Found in src/libraries/actions/Initialize.sol [Line: 181](../2024-06-size/src/libraries/actions/Initialize.sol#L181)
-
-	```solidity
-	        InitializeDataParams memory d
-	```
-
 - Found in src/libraries/actions/Initialize.sol [Line: 193](../2024-06-size/src/libraries/actions/Initialize.sol#L193)
 
 	```solidity
@@ -2841,52 +1857,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function executeInitialize(
 	```
 
-- Found in src/libraries/actions/Initialize.sol [Line: 268](../2024-06-size/src/libraries/actions/Initialize.sol#L268)
-
-	```solidity
-	        State storage state,
-	```
-
-- Found in src/libraries/actions/Initialize.sol [Line: 269](../2024-06-size/src/libraries/actions/Initialize.sol#L269)
-
-	```solidity
-	        InitializeFeeConfigParams memory f,
-	```
-
-- Found in src/libraries/actions/Initialize.sol [Line: 270](../2024-06-size/src/libraries/actions/Initialize.sol#L270)
-
-	```solidity
-	        InitializeRiskConfigParams memory r,
-	```
-
-- Found in src/libraries/actions/Initialize.sol [Line: 271](../2024-06-size/src/libraries/actions/Initialize.sol#L271)
-
-	```solidity
-	        InitializeOracleParams memory o,
-	```
-
-- Found in src/libraries/actions/Initialize.sol [Line: 272](../2024-06-size/src/libraries/actions/Initialize.sol#L272)
-
-	```solidity
-	        InitializeDataParams memory d
-	```
-
-- Found in src/libraries/actions/Liquidate.sol [Line: 20](../2024-06-size/src/libraries/actions/Liquidate.sol#L20)
-
-	```solidity
-	    uint256 debtPositionId;
-	```
-
 - Found in src/libraries/actions/Liquidate.sol [Line: 37](../2024-06-size/src/libraries/actions/Liquidate.sol#L37)
 
 	```solidity
 	    function validateLiquidate(State storage state, LiquidateParams calldata params) external view {
-	```
-
-- Found in src/libraries/actions/Liquidate.sol [Line: 38](../2024-06-size/src/libraries/actions/Liquidate.sol#L38)
-
-	```solidity
-	        DebtPosition storage debtPosition = state.getDebtPosition(params.debtPositionId);
 	```
 
 - Found in src/libraries/actions/Liquidate.sol [Line: 59](../2024-06-size/src/libraries/actions/Liquidate.sol#L59)
@@ -2895,64 +1869,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function validateMinimumCollateralProfit(
 	```
 
-- Found in src/libraries/actions/Liquidate.sol [Line: 61](../2024-06-size/src/libraries/actions/Liquidate.sol#L61)
-
-	```solidity
-	        LiquidateParams calldata params,
-	```
-
-- Found in src/libraries/actions/Liquidate.sol [Line: 62](../2024-06-size/src/libraries/actions/Liquidate.sol#L62)
-
-	```solidity
-	        uint256 liquidatorProfitCollateralToken
-	```
-
 - Found in src/libraries/actions/Liquidate.sol [Line: 75](../2024-06-size/src/libraries/actions/Liquidate.sol#L75)
 
 	```solidity
 	    function executeLiquidate(State storage state, LiquidateParams calldata params)
-	```
-
-- Found in src/libraries/actions/Liquidate.sol [Line: 77](../2024-06-size/src/libraries/actions/Liquidate.sol#L77)
-
-	```solidity
-	        returns (uint256 liquidatorProfitCollateralToken)
-	```
-
-- Found in src/libraries/actions/Liquidate.sol [Line: 79](../2024-06-size/src/libraries/actions/Liquidate.sol#L79)
-
-	```solidity
-	        DebtPosition storage debtPosition = state.getDebtPosition(params.debtPositionId);
-	```
-
-- Found in src/libraries/actions/Liquidate.sol [Line: 81](../2024-06-size/src/libraries/actions/Liquidate.sol#L81)
-
-	```solidity
-	        uint256 collateralRatio = state.collateralRatio(debtPosition.borrower);
-	```
-
-- Found in src/libraries/actions/Liquidate.sol [Line: 90](../2024-06-size/src/libraries/actions/Liquidate.sol#L90)
-
-	```solidity
-	        uint256 assignedCollateral = state.getDebtPositionAssignedCollateral(debtPosition);
-	```
-
-- Found in src/libraries/actions/Liquidate.sol [Line: 91](../2024-06-size/src/libraries/actions/Liquidate.sol#L91)
-
-	```solidity
-	        uint256 debtInCollateralToken = state.debtTokenAmountToCollateralTokenAmount(debtPosition.futureValue);
-	```
-
-- Found in src/libraries/actions/Liquidate.sol [Line: 96](../2024-06-size/src/libraries/actions/Liquidate.sol#L96)
-
-	```solidity
-	            uint256 liquidatorReward = Math.min(
-	```
-
-- Found in src/libraries/actions/LiquidateWithReplacement.sol [Line: 21](../2024-06-size/src/libraries/actions/LiquidateWithReplacement.sol#L21)
-
-	```solidity
-	    uint256 debtPositionId;
 	```
 
 - Found in src/libraries/actions/LiquidateWithReplacement.sol [Line: 47](../2024-06-size/src/libraries/actions/LiquidateWithReplacement.sol#L47)
@@ -2961,82 +1881,16 @@ it is recommended that the definition be removed when custom error is unused
 	    function validateLiquidateWithReplacement(State storage state, LiquidateWithReplacementParams calldata params)
 	```
 
-- Found in src/libraries/actions/LiquidateWithReplacement.sol [Line: 51](../2024-06-size/src/libraries/actions/LiquidateWithReplacement.sol#L51)
-
-	```solidity
-	        DebtPosition storage debtPosition = state.getDebtPosition(params.debtPositionId);
-	```
-
-- Found in src/libraries/actions/LiquidateWithReplacement.sol [Line: 66](../2024-06-size/src/libraries/actions/LiquidateWithReplacement.sol#L66)
-
-	```solidity
-	        uint256 tenor = debtPosition.dueDate - block.timestamp;
-	```
-
-- Found in src/libraries/actions/LiquidateWithReplacement.sol [Line: 82](../2024-06-size/src/libraries/actions/LiquidateWithReplacement.sol#L82)
-
-	```solidity
-	        uint256 apr = borrowOffer.getAPRByTenor(
-	```
-
 - Found in src/libraries/actions/LiquidateWithReplacement.sol [Line: 99](../2024-06-size/src/libraries/actions/LiquidateWithReplacement.sol#L99)
 
 	```solidity
 	    function validateMinimumCollateralProfit(
 	```
 
-- Found in src/libraries/actions/LiquidateWithReplacement.sol [Line: 100](../2024-06-size/src/libraries/actions/LiquidateWithReplacement.sol#L100)
-
-	```solidity
-	        State storage state,
-	```
-
-- Found in src/libraries/actions/LiquidateWithReplacement.sol [Line: 101](../2024-06-size/src/libraries/actions/LiquidateWithReplacement.sol#L101)
-
-	```solidity
-	        LiquidateWithReplacementParams calldata params,
-	```
-
-- Found in src/libraries/actions/LiquidateWithReplacement.sol [Line: 102](../2024-06-size/src/libraries/actions/LiquidateWithReplacement.sol#L102)
-
-	```solidity
-	        uint256 liquidatorProfitCollateralToken
-	```
-
 - Found in src/libraries/actions/LiquidateWithReplacement.sol [Line: 120](../2024-06-size/src/libraries/actions/LiquidateWithReplacement.sol#L120)
 
 	```solidity
 	    function executeLiquidateWithReplacement(State storage state, LiquidateWithReplacementParams calldata params)
-	```
-
-- Found in src/libraries/actions/LiquidateWithReplacement.sol [Line: 122](../2024-06-size/src/libraries/actions/LiquidateWithReplacement.sol#L122)
-
-	```solidity
-	        returns (uint256 issuanceValue, uint256 liquidatorProfitCollateralToken, uint256 liquidatorProfitBorrowToken)
-	```
-
-- Found in src/libraries/actions/LiquidateWithReplacement.sol [Line: 126](../2024-06-size/src/libraries/actions/LiquidateWithReplacement.sol#L126)
-
-	```solidity
-	        DebtPosition storage debtPosition = state.getDebtPosition(params.debtPositionId);
-	```
-
-- Found in src/libraries/actions/LiquidateWithReplacement.sol [Line: 129](../2024-06-size/src/libraries/actions/LiquidateWithReplacement.sol#L129)
-
-	```solidity
-	        uint256 tenor = debtPositionCopy.dueDate - block.timestamp;
-	```
-
-- Found in src/libraries/actions/LiquidateWithReplacement.sol [Line: 138](../2024-06-size/src/libraries/actions/LiquidateWithReplacement.sol#L138)
-
-	```solidity
-	        uint256 ratePerTenor = borrowOffer.getRatePerTenor(
-	```
-
-- Found in src/libraries/actions/Repay.sol [Line: 15](../2024-06-size/src/libraries/actions/Repay.sol#L15)
-
-	```solidity
-	    uint256 debtPositionId;
 	```
 
 - Found in src/libraries/actions/Repay.sol [Line: 33](../2024-06-size/src/libraries/actions/Repay.sol#L33)
@@ -3051,64 +1905,16 @@ it is recommended that the definition be removed when custom error is unused
 	    function executeRepay(State storage state, RepayParams calldata params) external {
 	```
 
-- Found in src/libraries/actions/Repay.sol [Line: 47](../2024-06-size/src/libraries/actions/Repay.sol#L47)
-
-	```solidity
-	        DebtPosition storage debtPosition = state.getDebtPosition(params.debtPositionId);
-	```
-
-- Found in src/libraries/actions/SelfLiquidate.sol [Line: 17](../2024-06-size/src/libraries/actions/SelfLiquidate.sol#L17)
-
-	```solidity
-	    uint256 creditPositionId;
-	```
-
 - Found in src/libraries/actions/SelfLiquidate.sol [Line: 34](../2024-06-size/src/libraries/actions/SelfLiquidate.sol#L34)
 
 	```solidity
 	    function validateSelfLiquidate(State storage state, SelfLiquidateParams calldata params) external view {
 	```
 
-- Found in src/libraries/actions/SelfLiquidate.sol [Line: 35](../2024-06-size/src/libraries/actions/SelfLiquidate.sol#L35)
-
-	```solidity
-	        CreditPosition storage creditPosition = state.getCreditPosition(params.creditPositionId);
-	```
-
-- Found in src/libraries/actions/SelfLiquidate.sol [Line: 36](../2024-06-size/src/libraries/actions/SelfLiquidate.sol#L36)
-
-	```solidity
-	        DebtPosition storage debtPosition = state.getDebtPositionByCreditPositionId(params.creditPositionId);
-	```
-
 - Found in src/libraries/actions/SelfLiquidate.sol [Line: 59](../2024-06-size/src/libraries/actions/SelfLiquidate.sol#L59)
 
 	```solidity
 	    function executeSelfLiquidate(State storage state, SelfLiquidateParams calldata params) external {
-	```
-
-- Found in src/libraries/actions/SelfLiquidate.sol [Line: 62](../2024-06-size/src/libraries/actions/SelfLiquidate.sol#L62)
-
-	```solidity
-	        CreditPosition storage creditPosition = state.getCreditPosition(params.creditPositionId);
-	```
-
-- Found in src/libraries/actions/SelfLiquidate.sol [Line: 63](../2024-06-size/src/libraries/actions/SelfLiquidate.sol#L63)
-
-	```solidity
-	        DebtPosition storage debtPosition = state.getDebtPositionByCreditPositionId(params.creditPositionId);
-	```
-
-- Found in src/libraries/actions/SelfLiquidate.sol [Line: 65](../2024-06-size/src/libraries/actions/SelfLiquidate.sol#L65)
-
-	```solidity
-	        uint256 assignedCollateral = state.getCreditPositionProRataAssignedCollateral(creditPosition);
-	```
-
-- Found in src/libraries/actions/SellCreditLimit.sol [Line: 12](../2024-06-size/src/libraries/actions/SellCreditLimit.sol#L12)
-
-	```solidity
-	    YieldCurve curveRelativeTime;
 	```
 
 - Found in src/libraries/actions/SellCreditLimit.sol [Line: 25](../2024-06-size/src/libraries/actions/SellCreditLimit.sol#L25)
@@ -3123,58 +1929,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function executeSellCreditLimit(State storage state, SellCreditLimitParams calldata params) external {
 	```
 
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 22](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L22)
-
-	```solidity
-	    uint256 creditPositionId;
-	```
-
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 24](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L24)
-
-	```solidity
-	    uint256 amount;
-	```
-
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 27](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L27)
-
-	```solidity
-	    uint256 tenor;
-	```
-
 - Found in src/libraries/actions/SellCreditMarket.sol [Line: 51](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L51)
 
 	```solidity
 	    function validateSellCreditMarket(State storage state, SellCreditMarketParams calldata params) external view {
-	```
-
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 52](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L52)
-
-	```solidity
-	        LoanOffer memory loanOffer = state.data.users[params.lender].loanOffer;
-	```
-
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 53](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L53)
-
-	```solidity
-	        uint256 tenor;
-	```
-
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 72](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L72)
-
-	```solidity
-	            CreditPosition storage creditPosition = state.getCreditPosition(params.creditPositionId);
-	```
-
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 73](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L73)
-
-	```solidity
-	            DebtPosition storage debtPosition = state.getDebtPositionByCreditPositionId(params.creditPositionId);
-	```
-
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 108](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L108)
-
-	```solidity
-	        uint256 apr = loanOffer.getAPRByTenor(
 	```
 
 - Found in src/libraries/actions/SellCreditMarket.sol [Line: 127](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L127)
@@ -3183,100 +1941,16 @@ it is recommended that the definition be removed when custom error is unused
 	    function executeSellCreditMarket(State storage state, SellCreditMarketParams calldata params)
 	```
 
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 129](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L129)
-
-	```solidity
-	        returns (uint256 cashAmountOut)
-	```
-
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 136](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L136)
-
-	```solidity
-	        CreditPosition memory creditPosition;
-	```
-
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 137](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L137)
-
-	```solidity
-	        uint256 tenor;
-	```
-
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 141](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L141)
-
-	```solidity
-	            DebtPosition storage debtPosition = state.getDebtPositionByCreditPositionId(params.creditPositionId);
-	```
-
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 147](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L147)
-
-	```solidity
-	        uint256 ratePerTenor = state.data.users[params.lender].loanOffer.getRatePerTenor(
-	```
-
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 156](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L156)
-
-	```solidity
-	        uint256 creditAmountIn;
-	```
-
-- Found in src/libraries/actions/SellCreditMarket.sol [Line: 157](../2024-06-size/src/libraries/actions/SellCreditMarket.sol#L157)
-
-	```solidity
-	        uint256 fees;
-	```
-
-- Found in src/libraries/actions/SetUserConfiguration.sol [Line: 13](../2024-06-size/src/libraries/actions/SetUserConfiguration.sol#L13)
-
-	```solidity
-	    uint256 openingLimitBorrowCR;
-	```
-
 - Found in src/libraries/actions/SetUserConfiguration.sol [Line: 31](../2024-06-size/src/libraries/actions/SetUserConfiguration.sol#L31)
 
 	```solidity
 	    function validateSetUserConfiguration(State storage state, SetUserConfigurationParams calldata params)
 	```
 
-- Found in src/libraries/actions/SetUserConfiguration.sol [Line: 48](../2024-06-size/src/libraries/actions/SetUserConfiguration.sol#L48)
-
-	```solidity
-	        for (uint256 i = 0; i < params.creditPositionIds.length; i++) {
-	```
-
-- Found in src/libraries/actions/SetUserConfiguration.sol [Line: 49](../2024-06-size/src/libraries/actions/SetUserConfiguration.sol#L49)
-
-	```solidity
-	            CreditPosition storage creditPosition = state.getCreditPosition(params.creditPositionIds[i]);
-	```
-
 - Found in src/libraries/actions/SetUserConfiguration.sol [Line: 63](../2024-06-size/src/libraries/actions/SetUserConfiguration.sol#L63)
 
 	```solidity
 	    function executeSetUserConfiguration(State storage state, SetUserConfigurationParams calldata params) external {
-	```
-
-- Found in src/libraries/actions/SetUserConfiguration.sol [Line: 64](../2024-06-size/src/libraries/actions/SetUserConfiguration.sol#L64)
-
-	```solidity
-	        User storage user = state.data.users[msg.sender];
-	```
-
-- Found in src/libraries/actions/SetUserConfiguration.sol [Line: 69](../2024-06-size/src/libraries/actions/SetUserConfiguration.sol#L69)
-
-	```solidity
-	        for (uint256 i = 0; i < params.creditPositionIds.length; i++) {
-	```
-
-- Found in src/libraries/actions/SetUserConfiguration.sol [Line: 70](../2024-06-size/src/libraries/actions/SetUserConfiguration.sol#L70)
-
-	```solidity
-	            CreditPosition storage creditPosition = state.getCreditPosition(params.creditPositionIds[i]);
-	```
-
-- Found in src/libraries/actions/UpdateConfig.sol [Line: 26](../2024-06-size/src/libraries/actions/UpdateConfig.sol#L26)
-
-	```solidity
-	    uint256 value;
 	```
 
 - Found in src/libraries/actions/UpdateConfig.sol [Line: 42](../2024-06-size/src/libraries/actions/UpdateConfig.sol#L42)
@@ -3309,12 +1983,6 @@ it is recommended that the definition be removed when custom error is unused
 	    function executeUpdateConfig(State storage state, UpdateConfigParams calldata params) external {
 	```
 
-- Found in src/libraries/actions/Withdraw.sol [Line: 17](../2024-06-size/src/libraries/actions/Withdraw.sol#L17)
-
-	```solidity
-	    uint256 amount;
-	```
-
 - Found in src/libraries/actions/Withdraw.sol [Line: 29](../2024-06-size/src/libraries/actions/Withdraw.sol#L29)
 
 	```solidity
@@ -3325,12 +1993,6 @@ it is recommended that the definition be removed when custom error is unused
 
 	```solidity
 	    function executeWithdraw(State storage state, WithdrawParams calldata params) public {
-	```
-
-- Found in src/libraries/actions/Withdraw.sol [Line: 53](../2024-06-size/src/libraries/actions/Withdraw.sol#L53)
-
-	```solidity
-	        uint256 amount;
 	```
 
 - Found in src/oracle/IPriceFeed.sol [Line: 9](../2024-06-size/src/oracle/IPriceFeed.sol#L9)
@@ -3345,58 +2007,10 @@ it is recommended that the definition be removed when custom error is unused
 	    function decimals() external view returns (uint256);
 	```
 
-- Found in src/oracle/PriceFeed.sol [Line: 25](../2024-06-size/src/oracle/PriceFeed.sol#L25)
-
-	```solidity
-	    uint256 private constant GRACE_PERIOD_TIME = 3600;
-	```
-
-- Found in src/oracle/PriceFeed.sol [Line: 29](../2024-06-size/src/oracle/PriceFeed.sol#L29)
-
-	```solidity
-	    AggregatorV3Interface public immutable base;
-	```
-
-- Found in src/oracle/PriceFeed.sol [Line: 30](../2024-06-size/src/oracle/PriceFeed.sol#L30)
-
-	```solidity
-	    AggregatorV3Interface public immutable quote;
-	```
-
-- Found in src/oracle/PriceFeed.sol [Line: 31](../2024-06-size/src/oracle/PriceFeed.sol#L31)
-
-	```solidity
-	    AggregatorV3Interface internal immutable sequencerUptimeFeed;
-	```
-
 - Found in src/oracle/PriceFeed.sol [Line: 36](../2024-06-size/src/oracle/PriceFeed.sol#L36)
 
 	```solidity
 	    constructor(
-	```
-
-- Found in src/oracle/PriceFeed.sol [Line: 37](../2024-06-size/src/oracle/PriceFeed.sol#L37)
-
-	```solidity
-	        address _base,
-	```
-
-- Found in src/oracle/PriceFeed.sol [Line: 38](../2024-06-size/src/oracle/PriceFeed.sol#L38)
-
-	```solidity
-	        address _quote,
-	```
-
-- Found in src/oracle/PriceFeed.sol [Line: 40](../2024-06-size/src/oracle/PriceFeed.sol#L40)
-
-	```solidity
-	        uint256 _baseStalePriceInterval,
-	```
-
-- Found in src/oracle/PriceFeed.sol [Line: 41](../2024-06-size/src/oracle/PriceFeed.sol#L41)
-
-	```solidity
-	        uint256 _quoteStalePriceInterval
 	```
 
 - Found in src/oracle/PriceFeed.sol [Line: 63](../2024-06-size/src/oracle/PriceFeed.sol#L63)
@@ -3405,52 +2019,16 @@ it is recommended that the definition be removed when custom error is unused
 	    function getPrice() external view returns (uint256) {
 	```
 
-- Found in src/oracle/PriceFeed.sol [Line: 66](../2024-06-size/src/oracle/PriceFeed.sol#L66)
-
-	```solidity
-	            (, int256 answer, uint256 startedAt,,) = sequencerUptimeFeed.latestRoundData();
-	```
-
 - Found in src/oracle/PriceFeed.sol [Line: 84](../2024-06-size/src/oracle/PriceFeed.sol#L84)
 
 	```solidity
 	    function _getPrice(AggregatorV3Interface aggregator, uint256 stalePriceInterval) internal view returns (uint256) {
 	```
 
-- Found in src/oracle/PriceFeed.sol [Line: 86](../2024-06-size/src/oracle/PriceFeed.sol#L86)
-
-	```solidity
-	        (, int256 price,, uint256 updatedAt,) = aggregator.latestRoundData();
-	```
-
-- Found in src/token/NonTransferrableScaledToken.sol [Line: 23](../2024-06-size/src/token/NonTransferrableScaledToken.sol#L23)
-
-	```solidity
-	    event TransferUnscaled(address indexed from, address indexed to, uint256 value);
-	```
-
 - Found in src/token/NonTransferrableScaledToken.sol [Line: 25](../2024-06-size/src/token/NonTransferrableScaledToken.sol#L25)
 
 	```solidity
 	    constructor(
-	```
-
-- Found in src/token/NonTransferrableScaledToken.sol [Line: 26](../2024-06-size/src/token/NonTransferrableScaledToken.sol#L26)
-
-	```solidity
-	        IPool variablePool_,
-	```
-
-- Found in src/token/NonTransferrableScaledToken.sol [Line: 27](../2024-06-size/src/token/NonTransferrableScaledToken.sol#L27)
-
-	```solidity
-	        IERC20Metadata underlyingToken_,
-	```
-
-- Found in src/token/NonTransferrableScaledToken.sol [Line: 31](../2024-06-size/src/token/NonTransferrableScaledToken.sol#L31)
-
-	```solidity
-	        uint8 decimals_
 	```
 
 - Found in src/token/NonTransferrableScaledToken.sol [Line: 42](../2024-06-size/src/token/NonTransferrableScaledToken.sol#L42)

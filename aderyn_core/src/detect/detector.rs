@@ -15,12 +15,13 @@ use crate::{
             ContractsWithTodosDetector, DeprecatedOZFunctionsDetector,
             DivisionBeforeMultiplicationDetector, EcrecoverDetector, EmptyBlockDetector,
             InconsistentTypeNamesDetector, LargeLiteralValueDetector,
-            NonReentrantBeforeOthersDetector, PushZeroOpcodeDetector, RequireWithStringDetector,
-            RevertsAndRequiresInLoopsDetector, SolmateSafeTransferLibDetector,
-            UnindexedEventsDetector, UnsafeERC20FunctionsDetector, UnsafeERC721MintDetector,
-            UnspecificSolidityPragmaDetector, UselessErrorDetector,
+            NonReentrantBeforeOthersDetector, PushZeroOpcodeDetector, RepeatedAddressThisDetector,
+            RequireWithStringDetector, ResettingStateVariableDetector,
+            RevertsAndRequiresInLoopsDetector, SingleUseStateVariableDetector,
+            SolmateSafeTransferLibDetector, UnindexedEventsDetector, UnsafeERC20FunctionsDetector,
+            UnsafeERC721MintDetector, UnspecificSolidityPragmaDetector, UselessErrorDetector,
             UselessInternalFunctionDetector, UselessModifierDetector,
-            UselessPublicFunctionDetector, ZeroAddressCheckDetector, MyFirstDetector
+            UselessPublicFunctionDetector, ZeroAddressCheckDetector,
         },
     },
 };
@@ -30,6 +31,8 @@ use std::{
     fmt::{self, Display},
     str::FromStr,
 };
+
+use super::low::SingleUseStateVariableDetector;
 
 pub fn get_all_issue_detectors() -> Vec<Box<dyn IssueDetector>> {
     vec![
@@ -62,7 +65,9 @@ pub fn get_all_issue_detectors() -> Vec<Box<dyn IssueDetector>> {
         Box::<RevertsAndRequiresInLoopsDetector>::default(),
         Box::<DivisionBeforeMultiplicationDetector>::default(),
         Box::<UnsafeCastingDetector>::default(),
-        Box::<MyFirstDetector>::default(),
+        Box::<RepeatedAddressThisDetector>::default(),
+        Box::<ResettingStateVariableDetector>::default(),
+        Box::<SingleUseStateVariableDetector>::default(),
     ]
 }
 
@@ -105,7 +110,9 @@ pub(crate) enum IssueDetectorNamePool {
     UnsafeCastingDetector,
     // NOTE: `Undecided` will be the default name (for new bots).
     // If it's accepted, a new variant will be added to this enum before normalizing it in aderyn
-    MyFirst,
+    AddressThis,
+    ResettingStateVariable,
+    SingleUseStateVariable,
     Undecided,
 }
 
@@ -160,7 +167,7 @@ pub fn request_issue_detector_by_name(detector_name: &str) -> Option<Box<dyn Iss
             Some(Box::<ArbitraryTransferFromDetector>::default())
         }
         IssueDetectorNamePool::UselessModifier => Some(Box::<UselessModifierDetector>::default()),
-        
+
         IssueDetectorNamePool::LargeNumericLiteral => {
             Some(Box::<LargeLiteralValueDetector>::default())
         }
@@ -187,8 +194,12 @@ pub fn request_issue_detector_by_name(detector_name: &str) -> Option<Box<dyn Iss
         IssueDetectorNamePool::UnsafeCastingDetector => {
             Some(Box::<UnsafeCastingDetector>::default())
         }
-        IssueDetectorNamePool::MyFirst => {
-            Some(Box::<MyFirstDetector>::default())
+        IssueDetectorNamePool::AddressThis => Some(Box::<RepeatedAddressThisDetector>::default()),
+        IssueDetectorNamePool::ResettingStateVariable => {
+            Some(Box::<ResettingStateVariableDetector>::default())
+        }
+        IssueDetectorNamePool::SingleUseStateVariable => {
+            Some(Box::<SingleUseStateVariableDetector>::default())
         }
         IssueDetectorNamePool::Undecided => None,
     }

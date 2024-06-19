@@ -1,5 +1,5 @@
 [profile.default]
-src = "src"
+src = "src/temp"
 out = "out"
 libs = ["lib"]
 bytecode_hash = "none"

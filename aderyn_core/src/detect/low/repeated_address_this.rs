@@ -19,24 +19,17 @@ use crate::{
 
 use eyre::Result;
 
-// HOW TO USE THIS TEMPLATE:
-// 1. Copy this file and rename it to the snake_case version of the issue you are detecting.
-// 2. Rename the TemplateDetector struct and impl to your new issue name.
-// 3. Add this file and detector struct to the mod.rs file in the same directory.
-// 4. Implement the detect function to find instances of the issue.
-
 #[derive(Default)]
-pub struct MyFirstDetector {
-    // Keys are: [0] source file name, [1] line number, [2] character location of node.
-    // Do not add items manually, use `capture!` to add nodes to this BTreeMap.
+pub struct RepeatedAddressThisDetector {
     found_instances: BTreeMap<(String, usize, String), NodeID>,
 }
 
 /**
- * This detector finds all address(this) calls in a contract.
+ * @author Stefania Pozzi
+ * @description This detector finds all address(this) calls in a contract.
  * If it has been found more than 2 times, report it.
 */
-impl IssueDetector for MyFirstDetector {
+impl IssueDetector for RepeatedAddressThisDetector {
     fn detect(&mut self, context: &WorkspaceContext) -> Result<bool, Box<dyn Error>> {
         let mut repeated_function_calls: Vec<&FunctionCall> = vec![];
         for call in context.function_calls() {
@@ -89,7 +82,7 @@ impl IssueDetector for MyFirstDetector {
     }
 
     fn name(&self) -> String {
-        format!("{}", IssueDetectorNamePool::MyFirst)
+        format!("{}", IssueDetectorNamePool::AddressThis)
     }
 }
 
